@@ -1,0 +1,16 @@
+[alias]
+	st = status
+	ci = commit
+	l = log
+[user]
+	name = Wender Freese
+	email = wender.jean@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	editor = vim
+[push]
+	default = simple
