@@ -1,6 +1,9 @@
 set nocompatible
+
 syntax on
+
 let mapleader=","
+
 set backspace=indent,eol,start
 set backup
 set mouse=a
@@ -24,56 +27,29 @@ set shiftround
 set smartcase
 set shiftwidth=2
 set softtabstop=2
+
 au BufNewFile,BufRead *.conf set filetype=conf
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'fatih/vim-go'
-Plugin 'jamestomasino/actionscript-vim-bundle'
+Plugin 'ntk148v/vim-horizon'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-haml.git'
-Plugin 'slim-template/vim-slim'
-Plugin 'kchmck/vim-coffee-script.git'
-Plugin 'pangloss/vim-javascript.git'
-Plugin 'othree/html5.vim'
-Plugin 'tsaleh/vim-align'
-Plugin 'mxw/vim-jsx'
-Plugin 'garbas/vim-snipmate'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'honza/vim-snippets.git'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-surround.git'
-Plugin 'Townk/vim-autoclose.git'
-Plugin 'kien/ctrlp.vim.git'
-Plugin 'vim-scripts/python.vim--Vasiliev'
-Plugin 'rodjek/vim-puppet.git'
-Plugin 'vim-scripts/nginx.vim.git'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'claco/jasmine.vim'
-Plugin 'vim-scripts/tornadotmpl.vim'
-Plugin 'mklabs/grunt.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'kevinw/pyflakes-vim'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'walm/jshint.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'takac/vim-hardtime'
 Plugin 'bling/vim-airline'
-Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'junegunn/fzf.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
 
 set shortmess+=A
-colorscheme solarized
+colorscheme horizon
 set background=dark
 
 "handling split of windows I stole this from
@@ -126,3 +102,4 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+set colorcolumn=99
