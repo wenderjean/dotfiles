@@ -28,6 +28,7 @@ set smartcase
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set foldmethod=manual
 
 au BufNewFile,BufRead *.conf set filetype=conf
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
@@ -45,6 +46,10 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'L9'
+Plugin 'mileszs/ack.vim'
+Plugin 'FuzzyFinder'
 call vundle#end()
 
 filetype plugin indent on
@@ -53,12 +58,15 @@ set shortmess+=A
 colorscheme horizon
 set background=dark
 
+cnoreabbrev Ack Ack!
+
 "handling split of windows I stole this from
 "http://robots.thoughtbot.com/post/48275867281/vim-splits-move-faster-and-more-naturally
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>a :Ack!<Space>
 set splitbelow
 set splitright
 
@@ -68,6 +76,7 @@ map <C-t> <Esc>:CtrlP<CR>
 "Since I'd never remembered buffers commands at least here I can buffer list
 "all and better using ctrl+shift+b ;)
 map <C-B> <Esc>:CtrlPBuffer<CR>
+map <C-A> <Esc>:Ack<CR>
 
 "Matching files showing above
 let g:ctrlp_match_window_reversed = 0
@@ -104,3 +113,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 set colorcolumn=99
+
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column --hidden --ignore .git'
+endif
