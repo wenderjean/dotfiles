@@ -46,3 +46,10 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+function today {
+  declare -a TEXTCOLORS=("1" "2" "3" "4" "5" "6" "7")
+  choosen=`shuf -i 1-${#TEXTCOLORS[@]} -n 1`
+
+  tput setaf ${TEXTCOLORS[$choosen]};tput bold; echo "TODAY IS: "`date +%^A`, `date +%^B`, `date +%F`"\e[39m"
+}

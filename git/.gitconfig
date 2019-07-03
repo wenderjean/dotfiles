@@ -1,0 +1,21 @@
+[user]
+	name = Wender Freese
+	email = wender.jean@gmail.com
+[core]
+	editor = vim
+  whitespace = trailing-space
+[diff]
+  tool = vimdiff
+[alias]
+	st = status
+	ci = commit
+	l = log
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[push]
+	default = simple
+[pull]
+	rebase = true
