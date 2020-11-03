@@ -1,10 +1,10 @@
-. vundle.sh
-. theme.sh
+. ~/.dotfiles/vim/vundle.sh
+. ~/.dotfiles/vim/theme.sh
 
 if [ ! -f ~/.vimrc ]; then
-  cp .vimrc ~/.vimrc
+  cp ~/.dotfiles/vim/.vimrc ~/.vimrc
 fi
 
 if [ ! -d ~/.vim ]; then
-  cp -r .vim ~/.vim
+  cp -r ~/.dotfiles/vim/.vim ~/.vim
 fi
