@@ -30,5 +30,13 @@ if [ ! -f ~/.aliases ]; then
   cp .aliases ~/.aliases
 fi
 
+if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
+  echo "Generating SSH key...\n"
+
+  ssh-keygen -t rsa
+
+  echo "\nYour key has been generated. Now go to GitHub."
+fi
+
 echo ""
 echo "All done. You can now start ZSH."
