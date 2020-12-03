@@ -18,4 +18,5 @@
 [push]
 	default = simple
 [pull]
+  default = current
 	rebase = true
