@@ -1,27 +1,34 @@
-require('lualine').setup {
-  options = {
-    theme = 'dracula-nvim',
-    icons_enabled = false
-  }
-}
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
-vim.cmd [[packadd packer.nvim]]
-vim.cmd [[colorscheme dracula]]
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	return
+end
 
 return require('packer').startup(function()
-  use 'Mofiqul/dracula.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-
-  use {
-    'nvim-telescope/telescope.nvim',
-    tag = 'nvim-0.6',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-	use 'nvim-telescope/telescope-media-files.nvim'
-	use 'nvim-telescope/telescope-fzy-native.nvim'
-	use 'nvim-telescope/telescope-project.nvim'
-
+	-- Packer
   use {'wbthomason/packer.nvim', opt = true}
-  use { 'nvim-lualine/lualine.nvim' }
+	
+	-- Utilities
+	use("nvim-lua/plenary.nvim")
+
+	-- Theme
+	use 'Mofiqul/dracula.nvim'
+
+	-- Miscelaneous
+	use("kyazdani42/nvim-web-devicons") -- Icons
+
+	-- Status Bar
+	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+
+	-- Telescope
+	use("nvim-telescope/telescope.nvim") -- Searcher
+	use("nvim-telescope/telescope-media-files.nvim") -- See images
+	use("nvim-telescope/telescope-fzy-native.nvim") -- Better sorte
 end)
 

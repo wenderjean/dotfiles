@@ -1,4 +1,6 @@
 lua require('plugins')
+lua require('theme')
+lua require('telescope')
 
 set nocompatible
 
@@ -16,6 +18,7 @@ set splitbelow
 set tabstop=2
 set ttyfast
 set wildmode=longest,list
+set statusline+=%F
 
 syntax on
 
