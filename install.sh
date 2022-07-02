@@ -21,7 +21,6 @@ elif [[ "$os" == 'Darwin' ]]; then
   . brew.sh
 fi
 
-. vim/install.sh
 . zsh/install.sh
 . git/install.sh
 . asdf/install.sh
