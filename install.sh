@@ -24,6 +24,8 @@ fi
 . zsh/install.sh
 . git/install.sh
 . asdf/install.sh
+. terminator/install.sh
+. nvim/packer.sh
 
 if [ ! -f ~/.aliases ]; then
   cp .aliases ~/.aliases
