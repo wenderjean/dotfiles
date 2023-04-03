@@ -7,28 +7,28 @@ vim.cmd([[
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	return
+    return
 end
 
 return require('packer').startup(function()
-	-- Packer
-  use {'wbthomason/packer.nvim', opt = true}
-	
-	-- Utilities
-	use("nvim-lua/plenary.nvim")
+    -- Packer
+    use {'wbthomason/packer.nvim', opt = true}
 
-	-- Theme
-	use 'Mofiqul/dracula.nvim'
+    -- Utilities
+    use("nvim-lua/plenary.nvim")
 
-	-- Miscelaneous
-	use("kyazdani42/nvim-web-devicons") -- Icons
+    -- Theme
+    use 'folke/tokyonight.nvim'
 
-	-- Status Bar
-	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+    -- Miscelaneous
+    use("kyazdani42/nvim-web-devicons") -- Icons
 
-	-- Telescope
-	use("nvim-telescope/telescope.nvim") -- Searcher
-	use("nvim-telescope/telescope-media-files.nvim") -- See images
-	use("nvim-telescope/telescope-fzy-native.nvim") -- Better sorte
+    -- Status Bar
+    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+
+    -- Telescope
+    use("nvim-telescope/telescope.nvim") -- Searcher
+    use("nvim-telescope/telescope-media-files.nvim") -- See images
+    use("nvim-telescope/telescope-fzy-native.nvim") -- Better sorte
 end)
 
