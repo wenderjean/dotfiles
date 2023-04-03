@@ -11,6 +11,8 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
+		file_ignore_patterns = { "node_modules/*", ".git" },
+		hidden = true,
 	},
 	extensions = {
 		fzy_native = {
@@ -18,11 +20,9 @@ telescope.setup({
 			override_file_sorter = true,
 		},
 	},
-	hidden = true,
 	pickers = {
 		find_files = {
 			hidden = true,
 		},
 	},
-	file_ignore_patters = { "node_modules/*", ".git" },
 })

@@ -1,8 +1,7 @@
 require('lualine').setup {
   options = {
-    theme = 'dracula-nvim',
-    icons_enabled = false
+    style = 'night'
   }
 }
 
-vim.cmd [[colorscheme dracula]]
+vim.cmd[[colorscheme tokyonight]]
