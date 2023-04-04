@@ -41,4 +41,7 @@ require("lazy").setup({
         dependencies = { "nvim-telescope/telescope.nvim" },
         build = "make",
     },
+
+    -- Buffer Tabs
+    "akinsho/bufferline.nvim",
 })
