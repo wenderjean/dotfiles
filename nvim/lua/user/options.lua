@@ -5,7 +5,7 @@ local options = {
 
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 
-	hlsearch = false, -- highlight all matches on previous search pattern
+	hlsearch = true, -- highlight all matches on previous search pattern
 	incsearch = true,
 
 	ignorecase = true, -- ignore case in search patterns

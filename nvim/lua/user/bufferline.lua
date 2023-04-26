@@ -6,12 +6,12 @@ end
 bufferline.setup({
     options = {
         numbers = "none",
-        close_command = "Bdelete! %d",
         modified_icon = "●",
+        close_command = "bd",
     },
     highlights = {
         fill = {
-            fg = { attribute = "fg", highlight = "#ff0000" },
+            fg = { attribute = "fg", highlight = "Tabline" },
             bg = { attribute = "bg", highlight = "TabLine" },
         },
         background = {
